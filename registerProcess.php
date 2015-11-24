@@ -7,9 +7,9 @@ header("Content-Type:text/xml;charset=utf-8");
 header("Cache-Control:no-cache");
 
 //接收数据
-$username=$_GET['username'];
+//$username=$_GET['username'];
 
-
+$username=$_POST['username'];
 if($username=="yannwu"){
 	echo "用户名不可以用";
 

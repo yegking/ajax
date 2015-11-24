@@ -34,7 +34,7 @@ var myXmlHttpRequest="";
 			//第二个参数指定url，对那个页面发出ajax请求（本质仍然是http请求）
 			//第三个参数表示true表示使用异步机制,如果false表示不使用异步
 
-			//GET方法
+			/*GET方法
 			
 			var url="../ajax/registerProcess.php?mytime="+new Date()+"&username="+$("username").value;
 			//打开请求
@@ -44,10 +44,24 @@ var myXmlHttpRequest="";
 			//真的发送请求，如果是get请求则填入null即可
 			//如果是post请求则填入实际的数据即可
 			myXmlHttpRequest.send(null);
+			*/
 
 			
 
 
+			//POST方法
+
+			var url="../ajax/registerProcess.php";
+			//这个是要发送的数据
+			var date="username="+$('username').value;
+			//打开请求
+			myXmlHttpRequest.open("post",url,true);
+			//还有着句话，必须
+			myXmlHttpRequest.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			//指定回调函数chuli
+			myXmlHttpRequest.onreadystatechange=chuli;
+			//真的发送请求，post则填入实际的数据
+			myXmlHttpRequest.send(date);
 
 
 
